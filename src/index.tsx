@@ -8,11 +8,12 @@ import Indexing from './screens/Indexing';
 import Tutorial from './screens/Tutorial';
 import ChoiseTypeDoc from './screens/ChoiseTypeDoc';
 import ChoiseSideDoc from './screens/ChoiseSideDoc';
+import ChoiseHowSendPhoto from './screens/ChoiseHowSendPhoto';
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <ChoiseSideDoc />
+      <ChoiseHowSendPhoto />
     </ThemeProvider>
   );
 }
