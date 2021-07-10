@@ -5,10 +5,10 @@ export const Container = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 
-  background-color: #c72725;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const ButtonText = styled.Text`
-  font-family: 'IBMPlexSans';
-  color: #fff;
+  font-family: ${({ theme }) => theme.fonts.IBMPlexSans};
+  color: ${({ theme }) => theme.colors.textWhite};
 `;
