@@ -4,12 +4,13 @@ import { Container, ButtonText } from './styles';
 
 interface HomeProps {
   text: string;
+  light?: boolean;
 }
 
-export default function Home({ text }: HomeProps) {
+export default function Home({ text, light = false }: HomeProps) {
   return (
-    <Container>
-      <ButtonText>{text}</ButtonText>
+    <Container light={light}>
+      <ButtonText light={light}>{text}</ButtonText>
     </Container>
   );
 }
