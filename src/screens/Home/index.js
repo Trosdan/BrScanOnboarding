@@ -1,12 +1,25 @@
 import React from 'react';
 
-import { Container, TextS, TextWithFamily } from './styles';
+import IconHome from '../../assets/IconHomeDark.png';
+import BottomButton from '../../components/BottomButton';
+
+import {
+  Container,
+  ContentWrapper,
+  ImageHome,
+  MainText,
+  SubText,
+} from './styles';
 
 export default function Home() {
   return (
     <Container>
-      <TextS>Ola mundo</TextS>
-      <TextWithFamily>Ola mundo</TextWithFamily>
+      <ContentWrapper>
+        <ImageHome source={IconHome} />
+        <MainText>BrSafe</MainText>
+        <SubText>Bioface</SubText>
+      </ContentWrapper>
+      <BottomButton text="INICIAR" />
     </Container>
   );
 }
