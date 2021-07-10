@@ -1,18 +1,7 @@
 import React from 'react';
 
-import { View, Text, StyleSheet } from 'react-native';
+import Home from './screens/Home';
 
 export default function App() {
-  return (
-    <View>
-      <Text>Ola mundo</Text>
-      <Text style={styles.text}>Ola mundo</Text>
-    </View>
-  );
+  return <Home />;
 }
-
-const styles = StyleSheet.create({
-  text: {
-    fontFamily: 'IBMPlexSans',
-  },
-});
