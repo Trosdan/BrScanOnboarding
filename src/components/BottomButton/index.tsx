@@ -2,7 +2,11 @@ import React from 'react';
 
 import { Container, ButtonText } from './styles';
 
-export default function Home({ text }) {
+interface HomeProps {
+  text: string;
+}
+
+export default function Home({ text }: HomeProps) {
   return (
     <Container>
       <ButtonText>{text}</ButtonText>
