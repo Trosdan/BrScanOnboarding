@@ -20,7 +20,9 @@ export default function PhotoCapture({ navigation }: PhotoCaptureProps) {
 
   const handleTakePhoto = useCallback(async () => {
     const data = await rnCameraRef.current?.takePictureAsync({ quality: 0.5 });
-  }, []);
+
+    navigation.navigate('Success');
+  }, [navigation]);
 
   const handleClosePhotoCapture = useCallback(() => {
     navigation.goBack();

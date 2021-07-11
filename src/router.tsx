@@ -9,6 +9,7 @@ import ChoiseTypeDoc from './screens/ChoiseTypeDoc';
 import ChoiseSideDoc from './screens/ChoiseSideDoc';
 import ChoiseHowSendPhoto from './screens/ChoiseHowSendPhoto';
 import PhotoCapture from './screens/PhotoCapture';
+import Success from './screens/Success';
 
 const AppStack = createStackNavigator(
   {
@@ -19,8 +20,9 @@ const AppStack = createStackNavigator(
     ChoiseSideDoc,
     ChoiseHowSendPhoto,
     PhotoCapture,
+    Success,
   },
-  { initialRouteName: 'Home', headerMode: 'none' }
+  { initialRouteName: 'Success', headerMode: 'none' }
 );
 
 const Router = createAppContainer(AppStack);
