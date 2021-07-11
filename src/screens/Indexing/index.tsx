@@ -15,6 +15,7 @@ import {
   PrivacyLinkText,
 } from './styles';
 import { useDoc } from '../../hooks/Doc';
+import { isValidCPF } from '../../utils';
 
 interface IndexingProps extends NavigationInjectedProps {}
 
@@ -31,6 +32,13 @@ export default function Indexing({ navigation }: IndexingProps) {
   }, []);
 
   const handleNavigateTutorial = useCallback(() => {
+    if (!isValidCPF(cpfInput)) {
+      return Alert.alert(
+        'CPF inválido.',
+        'Verifique os dados e tente novamente'
+      );
+    }
+    console.log(cpfInput);
     setCpf(cpfInput);
     navigation.navigate('Tutorial');
   }, [navigation, cpfInput]);
