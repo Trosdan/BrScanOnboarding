@@ -9,11 +9,12 @@ import Tutorial from './screens/Tutorial';
 import ChoiseTypeDoc from './screens/ChoiseTypeDoc';
 import ChoiseSideDoc from './screens/ChoiseSideDoc';
 import ChoiseHowSendPhoto from './screens/ChoiseHowSendPhoto';
+import PhotoCapture from './screens/PhotoCapture';
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <ChoiseHowSendPhoto />
+      <PhotoCapture />
     </ThemeProvider>
   );
 }
