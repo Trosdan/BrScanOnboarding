@@ -14,11 +14,14 @@ import {
   PrivacyLink,
   PrivacyLinkText,
 } from './styles';
+import { useDoc } from '../../hooks/Doc';
 
 interface IndexingProps extends NavigationInjectedProps {}
 
 export default function Indexing({ navigation }: IndexingProps) {
-  const [cpf, setCpf] = useState('');
+  const [cpfInput, setCpfInput] = useState('');
+
+  const { setCpf } = useDoc();
 
   const handleOpenPrivacy = useCallback(() => {
     Alert.alert(
@@ -28,8 +31,9 @@ export default function Indexing({ navigation }: IndexingProps) {
   }, []);
 
   const handleNavigateTutorial = useCallback(() => {
+    setCpf(cpfInput);
     navigation.navigate('Tutorial');
-  }, [navigation]);
+  }, [navigation, cpfInput]);
 
   return (
     <>
@@ -40,8 +44,8 @@ export default function Indexing({ navigation }: IndexingProps) {
         <InputMask
           type="cpf"
           keyboardType="numeric"
-          value={cpf}
-          onChangeText={(text) => setCpf(text)}
+          value={cpfInput}
+          onChangeText={(text) => setCpfInput(text)}
         />
 
         <PrivacyWrapper>

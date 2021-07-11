@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Container, ContentWrapper, MainText, SubText } from './styles';
 import { NavigationInjectedProps } from 'react-navigation';
 import BottomButton from '../../components/BottomButton';
+import { useDoc } from '../../hooks/Doc';
 
 interface SuccessProps extends NavigationInjectedProps {}
 
@@ -13,7 +14,11 @@ export default function Success({ navigation }: SuccessProps) {
   );
   const [subText, setSubText] = useState('');
 
+  const { docInfo } = useDoc();
+
   const sendData = useCallback(async () => {
+    console.log(docInfo);
+
     await waitForSeconds(5000);
     setMainText('Em análise.');
     setSubText('Aguarde um instante.');

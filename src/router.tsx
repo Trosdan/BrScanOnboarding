@@ -22,7 +22,7 @@ const AppStack = createStackNavigator(
     PhotoCapture,
     Success,
   },
-  { initialRouteName: 'Success', headerMode: 'none' }
+  { initialRouteName: 'Home', headerMode: 'none' }
 );
 
 const Router = createAppContainer(AppStack);

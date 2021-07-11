@@ -21,6 +21,7 @@ import {
 } from './styles';
 import { SelectButton } from '../../components/SelectButton';
 import LineSeparator from '../../components/LineSeparator';
+import { useDoc } from '../../hooks/Doc';
 
 interface ITypeDoc {
   iconFrente: ImageProps;
@@ -47,11 +48,18 @@ const typeDocData = {
 };
 
 export default function ChoiseSideDoc({ navigation }: ChoiseSideDocProps) {
-  const [typeDoc] = useState<ITypeDoc>(() => typeDocData['RG']);
+  const { docInfo, setSideDoc } = useDoc();
+  const [typeDoc] = useState<ITypeDoc>(
+    () => typeDocData[docInfo.typeDoc || 'RG']
+  );
 
-  const handleSelectSideDoc = useCallback(() => {
-    navigation.navigate('ChoiseHowSendPhoto');
-  }, [navigation]);
+  const handleSelectSideDoc = useCallback(
+    (sideDoc: string) => {
+      setSideDoc(sideDoc);
+      navigation.navigate('ChoiseHowSendPhoto');
+    },
+    [navigation, setSideDoc]
+  );
 
   return (
     <Container>
@@ -64,19 +72,19 @@ export default function ChoiseSideDoc({ navigation }: ChoiseSideDocProps) {
           <SelectButton
             imageIcon={typeDoc.iconFrente}
             text="FOTO DA FRENTE"
-            onPress={handleSelectSideDoc}
+            onPress={() => handleSelectSideDoc('front')}
           />
           <LineSeparator />
           <SelectButton
             imageIcon={typeDoc.iconVerso}
             text="FOTO DO VERSO"
-            onPress={handleSelectSideDoc}
+            onPress={() => handleSelectSideDoc('back')}
           />
           <LineSeparator />
           <SelectButton
             imageIcon={typeDoc.iconFrenteVerso}
             text="FRENTE E VERSO"
-            onPress={handleSelectSideDoc}
+            onPress={() => handleSelectSideDoc('frontback')}
           />
         </ButtonWrapper>
       </MainContent>

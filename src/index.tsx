@@ -5,10 +5,14 @@ import theme from './styles/theme';
 
 import Router from './router';
 
+import { DocProvider } from './hooks/Doc';
+
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router />
+      <DocProvider>
+        <Router />
+      </DocProvider>
     </ThemeProvider>
   );
 }

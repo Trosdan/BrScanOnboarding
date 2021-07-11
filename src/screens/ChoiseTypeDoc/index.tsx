@@ -15,13 +15,20 @@ import IconCNH from '../../assets/Doc/IconCNH.png';
 import Header from '../../components/Header';
 import { SelectButton } from '../../components/SelectButton';
 import LineSeparator from '../../components/LineSeparator';
+import { useDoc } from '../../hooks/Doc';
 
 interface TutorialProps extends NavigationInjectedProps {}
 
-export default function Tutorial({ navigation }: NavigationInjectedProps) {
-  const handleSelectTypeDoc = useCallback(() => {
-    navigation.navigate('ChoiseSideDoc');
-  }, []);
+export default function Tutorial({ navigation }: TutorialProps) {
+  const { setTypeDoc } = useDoc();
+
+  const handleSelectTypeDoc = useCallback(
+    (typeDoc: 'RG' | 'CNH') => {
+      setTypeDoc(typeDoc);
+      navigation.navigate('ChoiseSideDoc');
+    },
+    [navigation, setTypeDoc]
+  );
 
   return (
     <Container>
@@ -34,13 +41,13 @@ export default function Tutorial({ navigation }: NavigationInjectedProps) {
           <SelectButton
             imageIcon={IconRG}
             text="USAR MEU RG"
-            onPress={handleSelectTypeDoc}
+            onPress={() => handleSelectTypeDoc('RG')}
           />
           <LineSeparator />
           <SelectButton
             imageIcon={IconCNH}
             text="USAR MINHA CNH"
-            onPress={handleSelectTypeDoc}
+            onPress={() => handleSelectTypeDoc('CNH')}
           />
         </ButtonWrapper>
       </MainContent>
