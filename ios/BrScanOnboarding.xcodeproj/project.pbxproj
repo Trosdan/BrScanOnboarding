@@ -44,6 +44,8 @@
 		7827DD3853884CAE88041C5B /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A30FE7B5A5DB428ABE1C53A9 /* libRNCamera.a */; };
 		1FFFCA750EA94420AEA94664 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E918E8522034C1B87DD4E5E /* libRNGestureHandler.a */; };
 		B14A2DCAF5644F4BAC6D3A5A /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E90AB2C47E47799C82B1D1 /* libRNGestureHandler-tvOS.a */; };
+		0204675D094845FDB243B77D /* libRCTOrientation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD8928FB6514B4180F3C238 /* libRCTOrientation.a */; };
+		2064727ED1F2493591BA1415 /* libRCTOrientation-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 998EA1AD78CB44CD80C3E34F /* libRCTOrientation-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -357,6 +359,9 @@
 		4DDF3FBB961F41B095A90DFE /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; name = "RNGestureHandler.xcodeproj"; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		1E918E8522034C1B87DD4E5E /* libRNGestureHandler.a */ = {isa = PBXFileReference; name = "libRNGestureHandler.a"; path = "libRNGestureHandler.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		A6E90AB2C47E47799C82B1D1 /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; name = "libRNGestureHandler-tvOS.a"; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		6665601089C14CB989320F91 /* RCTOrientation.xcodeproj */ = {isa = PBXFileReference; name = "RCTOrientation.xcodeproj"; path = "../node_modules/react-native-orientation-locker/iOS/RCTOrientation.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		BCD8928FB6514B4180F3C238 /* libRCTOrientation.a */ = {isa = PBXFileReference; name = "libRCTOrientation.a"; path = "libRCTOrientation.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		998EA1AD78CB44CD80C3E34F /* libRCTOrientation-tvOS.a */ = {isa = PBXFileReference; name = "libRCTOrientation-tvOS.a"; path = "libRCTOrientation-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +392,8 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				7827DD3853884CAE88041C5B /* libRNCamera.a in Frameworks */,
 				1FFFCA750EA94420AEA94664 /* libRNGestureHandler.a in Frameworks */,
+				0204675D094845FDB243B77D /* libRCTOrientation.a in Frameworks */,
+				2064727ED1F2493591BA1415 /* libRCTOrientation-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +586,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				04155019BC4143D7A8E07170 /* RNCamera.xcodeproj */,
 				4DDF3FBB961F41B095A90DFE /* RNGestureHandler.xcodeproj */,
+				6665601089C14CB989320F91 /* RCTOrientation.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1220,11 +1228,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-orientation-locker\windows/**",
 				);
 			};
 			name = Debug;
@@ -1249,11 +1260,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-orientation-locker\windows/**",
 				);
 			};
 			name = Release;
@@ -1278,6 +1292,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-orientation-locker\windows/**",
 				);
 			};
 			name = Debug;
@@ -1301,6 +1316,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-orientation-locker\windows/**",
 				);
 			};
 			name = Release;
@@ -1333,11 +1349,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-orientation-locker\windows/**",
 				);
 			};
 			name = Debug;
@@ -1370,11 +1389,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-orientation-locker\windows/**",
 				);
 			};
 			name = Release;
@@ -1406,11 +1428,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-orientation-locker\windows/**",
 				);
 			};
 			name = Debug;
@@ -1442,11 +1467,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-orientation-locker\windows/**",
 				);
 			};
 			name = Release;

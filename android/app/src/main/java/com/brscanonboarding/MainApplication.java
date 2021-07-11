@@ -3,6 +3,7 @@ package com.brscanonboarding;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.wonday.orientation.OrientationPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactNativeHost;
@@ -12,6 +13,8 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
 import java.util.List;
+
+import org.wonday.orientation.OrientationActivityLifecycle;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -25,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+          new OrientationPackage(),
           new RNGestureHandlerPackage(),
           new RNCameraPackage()
       );
@@ -44,6 +48,7 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    registerActivityLifecycleCallbacks(OrientationActivityLifecycle.getInstance());
     SoLoader.init(this, /* native exopackage */ false);
   }
 }
