@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { Alert } from 'react-native';
+import { NavigationInjectedProps } from 'react-navigation';
 
 import InputMask from '../../components/InputMask';
 import BottomButton from '../../components/BottomButton';
@@ -14,7 +15,9 @@ import {
   PrivacyLinkText,
 } from './styles';
 
-export default function Indexing() {
+interface IndexingProps extends NavigationInjectedProps {}
+
+export default function Indexing({ navigation }: IndexingProps) {
   const [cpf, setCpf] = useState('');
 
   const handleOpenPrivacy = useCallback(() => {
@@ -23,6 +26,10 @@ export default function Indexing() {
       'Quisque cursus sed nisi vel consectetur. Nunc a erat at ipsum cursus convallis sit amet in nisi.'
     );
   }, []);
+
+  const handleNavigateTutorial = useCallback(() => {
+    navigation.navigate('Tutorial');
+  }, [navigation]);
 
   return (
     <>
@@ -44,7 +51,7 @@ export default function Indexing() {
           </PrivacyLink>
         </PrivacyWrapper>
       </Container>
-      <BottomButton text="AVANÇAR" light />
+      <BottomButton text="AVANÇAR" light onPress={handleNavigateTutorial} />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { NavigationInjectedProps } from 'react-navigation';
 
 import {
   Container,
@@ -15,10 +16,11 @@ import Header from '../../components/Header';
 import { SelectButton } from '../../components/SelectButton';
 import LineSeparator from '../../components/LineSeparator';
 
-export default function Tutorial() {
+interface TutorialProps extends NavigationInjectedProps {}
+
+export default function Tutorial({ navigation }: NavigationInjectedProps) {
   const handleSelectTypeDoc = useCallback(() => {
-    // TODO
-    // Save the type of doc
+    navigation.navigate('ChoiseSideDoc');
   }, []);
 
   return (
@@ -29,9 +31,17 @@ export default function Tutorial() {
           <Text>Selecione o tipo de documento.</Text>
         </TextWrapper>
         <ButtonWrapper>
-          <SelectButton imageIcon={IconRG} text="USAR MEU RG" />
+          <SelectButton
+            imageIcon={IconRG}
+            text="USAR MEU RG"
+            onPress={handleSelectTypeDoc}
+          />
           <LineSeparator />
-          <SelectButton imageIcon={IconCNH} text="USAR MINHA CNH" />
+          <SelectButton
+            imageIcon={IconCNH}
+            text="USAR MINHA CNH"
+            onPress={handleSelectTypeDoc}
+          />
         </ButtonWrapper>
       </MainContent>
     </Container>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { NavigationInjectedProps, withNavigation } from 'react-navigation';
 
 import IconLeft from '../../assets/IconLeft.png';
 import IconLeftDark from '../../assets/IconLeftDark.png';
@@ -8,7 +9,7 @@ import IconCloseDark from '../../assets/Doc/IconCloseDark.png';
 
 import { Container, ButtonImageLeft, Text, ImageLeft } from './styles';
 
-interface HeaderProps {
+interface HeaderProps extends NavigationInjectedProps {
   light?: boolean;
   onBackPress?: () => void;
   showBackButton?: boolean;
@@ -17,18 +18,24 @@ interface HeaderProps {
   showCloseButton?: boolean;
 }
 
-export default function Header({
+function Header({
   light = false,
   onBackPress,
   showBackButton = true,
   text = '',
   onClosePress,
   showCloseButton = false,
+  navigation,
 }: HeaderProps) {
+  const handleGoBack = useCallback(() => {
+    if (typeof onBackPress === 'undefined') navigation.goBack();
+    else onBackPress();
+  }, [onBackPress, navigation]);
+
   return (
     <Container>
       {showBackButton && (
-        <ButtonImageLeft onPress={onBackPress}>
+        <ButtonImageLeft onPress={handleGoBack}>
           <ImageLeft source={light ? IconLeft : IconLeftDark} />
         </ButtonImageLeft>
       )}
@@ -41,3 +48,5 @@ export default function Header({
     </Container>
   );
 }
+
+export default withNavigation(Header);

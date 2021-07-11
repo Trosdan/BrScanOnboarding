@@ -14,11 +14,15 @@ import IconCNH from '../../assets/Doc/IconCNH.png';
 import Header from '../../components/Header';
 import { SelectButton } from '../../components/SelectButton';
 import LineSeparator from '../../components/LineSeparator';
+import { NavigationInjectedProps } from 'react-navigation';
 
-export default function ChoiseHowSendPhoto() {
+interface ChoiseHowSendPhotoProps extends NavigationInjectedProps {}
+
+export default function ChoiseHowSendPhoto({
+  navigation,
+}: ChoiseHowSendPhotoProps) {
   const handleSelectHowSendPhoto = useCallback(() => {
-    // TODO
-    // Save the type of doc
+    navigation.navigate('PhotoCapture');
   }, []);
 
   return (
@@ -29,9 +33,19 @@ export default function ChoiseHowSendPhoto() {
           <Text>Escolha uma das opções abaixo:</Text>
         </TextWrapper>
         <ButtonWrapper>
-          <SelectButton imageIcon={IconRG} text="UPLOAD DO ARQUIVO" light />
+          <SelectButton
+            imageIcon={IconRG}
+            text="UPLOAD DO ARQUIVO"
+            light
+            onPress={handleSelectHowSendPhoto}
+          />
           <LineSeparator />
-          <SelectButton imageIcon={IconCNH} text="CAPTURA UMA NOVA" light />
+          <SelectButton
+            imageIcon={IconCNH}
+            text="CAPTURA UMA NOVA"
+            light
+            onPress={handleSelectHowSendPhoto}
+          />
         </ButtonWrapper>
       </MainContent>
     </Container>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { ImageProps } from 'react-native';
+import { NavigationInjectedProps } from 'react-navigation';
 
 import Header from '../../components/Header';
 
@@ -28,6 +29,8 @@ interface ITypeDoc {
   text: string;
 }
 
+interface ChoiseSideDocProps extends NavigationInjectedProps {}
+
 const typeDocData = {
   RG: {
     iconFrente: IconRGFrente,
@@ -43,8 +46,12 @@ const typeDocData = {
   },
 };
 
-export default function ChoiseSideDoc() {
+export default function ChoiseSideDoc({ navigation }: ChoiseSideDocProps) {
   const [typeDoc] = useState<ITypeDoc>(() => typeDocData['RG']);
+
+  const handleSelectSideDoc = useCallback(() => {
+    navigation.navigate('ChoiseHowSendPhoto');
+  }, [navigation]);
 
   return (
     <Container>
@@ -54,13 +61,22 @@ export default function ChoiseSideDoc() {
           <Text>{typeDoc.text}</Text>
         </TextWrapper>
         <ButtonWrapper>
-          <SelectButton imageIcon={typeDoc.iconFrente} text="FOTO DA FRENTE" />
+          <SelectButton
+            imageIcon={typeDoc.iconFrente}
+            text="FOTO DA FRENTE"
+            onPress={handleSelectSideDoc}
+          />
           <LineSeparator />
-          <SelectButton imageIcon={typeDoc.iconVerso} text="FOTO DO VERSO" />
+          <SelectButton
+            imageIcon={typeDoc.iconVerso}
+            text="FOTO DO VERSO"
+            onPress={handleSelectSideDoc}
+          />
           <LineSeparator />
           <SelectButton
             imageIcon={typeDoc.iconFrenteVerso}
             text="FRENTE E VERSO"
+            onPress={handleSelectSideDoc}
           />
         </ButtonWrapper>
       </MainContent>

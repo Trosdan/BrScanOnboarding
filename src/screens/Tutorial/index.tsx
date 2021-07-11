@@ -20,8 +20,11 @@ import {
   SubText,
 } from './styles';
 import Header from '../../components/Header';
+import { NavigationInjectedProps } from 'react-navigation';
 
-export default function Tutorial() {
+interface TutorialProps extends NavigationInjectedProps {}
+
+export default function Tutorial({ navigation }: TutorialProps) {
   const swiperRef = useRef<Swiper>(null);
 
   const [currentIndexSwiper, setCurrentIndexSwiper] = useState(0);
@@ -35,8 +38,7 @@ export default function Tutorial() {
     if (currentIndexSwiper < 7) {
       swiperRef.current?.scrollBy(1, true);
     } else {
-      // TODO
-      // Go to the next page
+      navigation.navigate('ChoiseTypeDoc');
     }
   }, [currentIndexSwiper]);
 
@@ -44,8 +46,7 @@ export default function Tutorial() {
     if (currentIndexSwiper > 0) {
       swiperRef.current?.scrollBy(-1, true);
     } else {
-      // TODO
-      // Go to the next page
+      navigation.goBack();
     }
   }, [currentIndexSwiper]);
 
