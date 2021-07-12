@@ -1,4 +1,4 @@
-package com.brscanonboarding;
+package br.com.brscan.onboarding.documento;
 
 import android.app.Application;
 

@@ -1,4 +1,4 @@
-package com.brscanonboarding;
+package br.com.brscan.onboarding.documento;
 
 import android.content.Intent;
 import android.content.res.Configuration;
