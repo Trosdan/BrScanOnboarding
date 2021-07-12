@@ -17,12 +17,11 @@ export default function Success({ navigation }: SuccessProps) {
   const { docInfo } = useDoc();
 
   const sendData = useCallback(async () => {
-    console.log(docInfo);
-
-    await waitForSeconds(5000);
+    await waitForSeconds(2000);
     setMainText('Em análise.');
     setSubText('Aguarde um instante.');
-    await waitForSeconds(5000);
+
+    await waitForSeconds(2000);
     setMainText('Pronto!');
     setSubText('Seu documento foi recebido.');
     setLoading(true);

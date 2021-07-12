@@ -40,7 +40,7 @@ export default function Tutorial({ navigation }: TutorialProps) {
     } else {
       navigation.navigate('ChoiseTypeDoc');
     }
-  }, [currentIndexSwiper]);
+  }, [currentIndexSwiper, navigation, swiperRef]);
 
   const handlePrevius = useCallback(() => {
     if (currentIndexSwiper > 0) {
@@ -48,7 +48,7 @@ export default function Tutorial({ navigation }: TutorialProps) {
     } else {
       navigation.goBack();
     }
-  }, [currentIndexSwiper]);
+  }, [currentIndexSwiper, navigation, swiperRef]);
 
   return (
     <>

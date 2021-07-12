@@ -38,7 +38,7 @@ export default function Indexing({ navigation }: IndexingProps) {
         'Verifique os dados e tente novamente'
       );
     }
-    console.log(cpfInput);
+
     setCpf(cpfInput);
     navigation.navigate('Tutorial');
   }, [navigation, cpfInput]);

@@ -23,7 +23,7 @@ export default function ChoiseHowSendPhoto({
 }: ChoiseHowSendPhotoProps) {
   const handleSelectHowSendPhoto = useCallback(() => {
     navigation.navigate('PhotoCapture');
-  }, []);
+  }, [navigation]);
 
   return (
     <Container>

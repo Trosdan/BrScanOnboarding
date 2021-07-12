@@ -35,7 +35,7 @@ export default function PhotoCapture({ navigation }: PhotoCaptureProps) {
     } catch (error) {
       Alert.alert('Não foi possivel capturar a foto.');
     }
-  }, [navigation]);
+  }, [navigation, rnCameraRef]);
 
   const handleClosePhotoCapture = useCallback(() => {
     navigation.goBack();
