@@ -16,12 +16,12 @@ export const MainText = styled.Text`
   margin-top: 18px;
   font-size: 22px;
   font-weight: bold;
-  font-family: 'IBMPlexSans';
-  color: black;
+  font-family: ${({ theme }) => theme.fonts.IBMPlexSans};
+  color: ${({ theme }) => theme.colors.textBlack};
 `;
 
 export const SubText = styled.Text`
   font-size: 14px;
-  font-family: 'IBMPlexSans';
-  color: black;
+  font-family: ${({ theme }) => theme.fonts.IBMPlexSans};
+  color: ${({ theme }) => theme.colors.textBlack};
 `;
