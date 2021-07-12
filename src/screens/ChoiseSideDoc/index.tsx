@@ -56,7 +56,7 @@ export default function ChoiseSideDoc({ navigation }: ChoiseSideDocProps) {
   const handleSelectSideDoc = useCallback(
     (sideDoc: string) => {
       setSideDoc(sideDoc);
-      navigation.navigate('ChoiseHowSendPhoto');
+      navigation.navigate('PhotoCapture');
     },
     [navigation, setSideDoc]
   );
